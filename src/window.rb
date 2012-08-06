@@ -28,12 +28,15 @@ class Window < Gosu::Window
 				end
 				@update_counter = 0
 			end
-		else
-			#Snake is dead xP
-			#Poor Snake,
-			#It is so sad...
-			#Please, restart the game.
 		end
+	end
+	
+	def reset_game
+		@snake = Snake.new(self)
+		@power_up = PowerUp.new(self, @snake)
+		@snake_body = [SnakeBody.new(self, @snake, @snake)]
+		$alive = true
+		$score = 0
 	end
 	
 	def draw
@@ -48,6 +51,10 @@ class Window < Gosu::Window
 		@snake.button_down(id)
 		if (id == Gosu::KbEscape) then
 			close
+		end
+		
+		if ( (id == Gosu::Button::KbR) and ($alive == false) )
+			reset_game
 		end
 	end
 end
