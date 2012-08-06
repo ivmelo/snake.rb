@@ -1,7 +1,7 @@
 #snake.rb
 
 class Snake
-	attr_reader :last_x, :last_y, :x, :y
+	attr_reader :last_x, :last_y, :x, :y, :playing
 	
 	def initialize(window)
 		@window = window
@@ -10,7 +10,8 @@ class Snake
 		@y = 30
 		@last_x = 0
 		@last_y = 0
-		@dir = :down
+		@dir = :nothing
+		$playing = false
 	end
 	
 	def update
@@ -50,12 +51,16 @@ class Snake
 	def button_down(id)
 		if (@dir != :right && id == Gosu::KbLeft) then
 			@dir = :left
+			$playing = true
 		elsif (@dir != :left && id == Gosu::KbRight) then
 			@dir = :right
+			$playing = true
 		elsif (@dir != :down && id == Gosu::KbUp) then
 			@dir = :up
+			$playing = true
 		elsif (@dir != :up && id == Gosu::KbDown) then
 			@dir = :down
+			$playing = true
 		end
 	end
 end

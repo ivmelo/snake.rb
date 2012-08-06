@@ -17,7 +17,7 @@ class SnakeBody
 	def update
 		@last_x = @x
 		@last_y = @y
-		if (@head_snake.x == @x && @head_snake.y == @y) then
+		if ( (@head_snake.x == @x && @head_snake.y == @y) and $playing) then
 			$alive = false
 			puts "Final Score: #{$score} pts"
 		end

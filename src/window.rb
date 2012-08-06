@@ -53,7 +53,7 @@ class Window < Gosu::Window
 			close
 		end
 		
-		if ( (id == Gosu::Button::KbR) and ($alive == false) )
+		if ( (id == Gosu::Button::KbR) and ( not $alive and $playing) )
 			reset_game
 		end
 	end
