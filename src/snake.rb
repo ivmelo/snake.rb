@@ -7,10 +7,10 @@ class Snake
 		@window = window
 		@icon = Gosu::Image.new(@window, "img/snake.bmp", true)
 		@x = 0
-		@y = 0
+		@y = 30
 		@last_x = 0
 		@last_y = 0
-		@dir = :nothing
+		@dir = :down
 	end
 	
 	def update
