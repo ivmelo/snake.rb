@@ -11,5 +11,3 @@ require 'power_up'
 
 window = Window.new
 window.show 
-
-# Teste

@@ -14,6 +14,7 @@ class PowerUp
 		if (@x == @snake.x && @y == @snake.y) then
 			@x = rand(@window.width/30) * 30
 			@y = rand(@window.height/30) * 30
+			$score = $score + 1
 			return true
 		end
 		return false
