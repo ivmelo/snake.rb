@@ -15,7 +15,7 @@ class Window < Gosu::Window
 	end
 	
 	def update
-		if ($alive) then
+		if ($alive && $playing) then
 			if (@update_counter < @speed) then
 				@update_counter = @update_counter + 1
 			else
@@ -53,7 +53,7 @@ class Window < Gosu::Window
 			close
 		end
 		
-		if ( (id == Gosu::Button::KbR) and ( not $alive and $playing) )
+		if ((id == Gosu::Button::KbR) && (!$alive && $playing))
 			reset_game
 		end
 	end
